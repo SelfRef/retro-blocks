@@ -1,12 +1,41 @@
 {
   "name": "retro-blocks",
   "version": "1.0.0",
-  "description": "",
+  "description": "Universal web components library with retro styling",
   "license": "ISC",
   "author": "SelfRef",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "./dist/retro-blocks.umd.cjs",
+  "module": "./dist/retro-blocks.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/retro-blocks.js",
+      "require": "./dist/retro-blocks.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-links": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/web-components": "^8.4.7",
+    "@storybook/web-components-vite": "^8.4.7",
+    "storybook": "^8.4.7",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
   }
 }
